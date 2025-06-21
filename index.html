@@ -688,19 +688,6 @@
         </div>
     </div>
 
-    <!-- Dashboard Modal -->
-    <div id="dashboardModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeDashboard">&times;</span>
-            <div class="help-content">
-                <h2>Nessie's Discord Servers</h2>
-                <ul id="dashboardServerList" style="margin-top:1.5rem;color:#d5c8a7;">
-                    <li>Loading servers...</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -734,40 +721,6 @@
             if (e.target === helpModal) {
                 helpModal.style.display = 'none';
             }
-            if (e.target === dashboardModal) {
-                dashboardModal.style.display = 'none';
-            }
-        });
-
-        // Dashboard Modal functionality
-        const dashboardBtn = document.getElementById('dashboardBtn');
-        const dashboardModal = document.getElementById('dashboardModal');
-        const closeDashboardBtn = document.getElementById('closeDashboard');
-        const dashboardServerList = document.getElementById('dashboardServerList');
-
-        dashboardBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            dashboardModal.style.display = 'block';
-            dashboardServerList.innerHTML = "<li>Loading servers...</li>";
-            // Simulate fetching servers - replace this with API if you have one
-            setTimeout(() => {
-                const servers = [
-                    { name: "Nessie's Lair" },
-                    { name: "Fun & Games" },
-                    { name: "Support Hub" }
-                ];
-                if (servers.length) {
-                    dashboardServerList.innerHTML = servers.map(guild =>
-                        `<li style="margin-bottom:0.75rem;font-size:1.1rem;">🟢 ${guild.name}</li>`
-                    ).join('');
-                } else {
-                    dashboardServerList.innerHTML = "<li>No servers found.</li>";
-                }
-            }, 800);
-        });
-
-        closeDashboardBtn.addEventListener('click', () => {
-            dashboardModal.style.display = 'none';
         });
 
         // Discord OAuth Login functionality
@@ -921,6 +874,13 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
+
+        // Dashboard Modal functionality
+        const dashboardBtn = document.getElementById('dashboardBtn');
+        dashboardBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("This is where your dashboard modal or page would go!");
+        });
     </script>
 </body>
 </html>
