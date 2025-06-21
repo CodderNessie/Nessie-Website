@@ -640,7 +640,6 @@
                 <img src="nessie in water (1).png" alt="Nessie" class="logo">
                 <ul class="nav-links">
                     <li><a href="https://discord.gg/PDqwQxtV">Discord</a></li>
-                    <li><a href="#" id="dashboardBtn">Dashboard</a></li>
                     <li><a href="https://discord.com/oauth2/authorize?client_id=1376598928249716826">Invite</a></li>
                     <li><a href="#" id="loginBtn" class="login-btn">Login</a></li>
                 </ul>
@@ -754,7 +753,7 @@
             const responseType = 'code';
 
             // Construct Discord OAuth URL
-            const discordOAuthUrl = `https://canary.discord.com/login`;
+            const discordOAuthUrl = https://canary.discord.com/login;
 
             // Redirect to Discord OAuth
             window.location.href = discordOAuthUrl;
@@ -874,13 +873,6 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
-
-        // Dashboard Modal functionality
-        const dashboardBtn = document.getElementById('dashboardBtn');
-        dashboardBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert("This is where your dashboard modal or page would go!");
-        });
     </script>
 </body>
 </html>
